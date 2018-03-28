@@ -35,5 +35,3 @@ There are some additional notes commented in the source code of App.vue related 
 
 3. In App.vue, line 109, there seems to be an issue with the max option on the input element set to type number, at least when I tested it. I set maxlength to 7 as well for browsers that do not recognize type number and default to type text. You can see under Budget, you are able to enter values higher than 1,000,000, but you will get the warning message via Vue + vee-validate. 
 
-4. Server-side validation and sanitization is required since anyone can submit whatever they want directly via Postman. 
-
