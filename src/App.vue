@@ -252,7 +252,7 @@ h1 {
 }
 
 #success {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .center {
@@ -285,7 +285,7 @@ h1 {
 
 @media (max-width: 568px) { 
   h1 { 
-    font-size: 2em; 
+    font-size: 1.2em; 
   }
 }
 </style>
