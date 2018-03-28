@@ -186,6 +186,8 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
+          // Need another few steps here as the data is passed on and wait for a response from
+          // the server that it has been received before displaying it has been submitted. 
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
           console.log('Details: ', 'Name:', this.fullname, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.project_type, 'Budget:', this.budget, 'Description:', this.description)
