@@ -252,7 +252,7 @@ h1 {
 }
 
 #success {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .center {
