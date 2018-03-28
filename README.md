@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. [Download](https://github.com/jspringer/vue-request-form/archive/master.zip) and unzip locally.
+1. [Download](https://github.com/jspringer/vue-request-form/archive/master.zip) and unzip or [clone](https://github.com/jspringer/vue-request-form.git).
 
 2. Using terminal, type the following command in the directory of the unzipped files to install dependencies: 
 ``` bash
