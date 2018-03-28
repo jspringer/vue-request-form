@@ -285,7 +285,7 @@ h1 {
 
 @media (max-width: 568px) { 
   h1 { 
-    font-size: 1.2em; 
+    font-size: 1.5em; 
   }
 }
 </style>
