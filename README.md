@@ -30,7 +30,7 @@ I looked into and tried different packages for handling the forms and validation
 
 I did use some of the built in HTML options to limit the amount of characters (maxlength) or require a specific number of numbers (digits).
 
-Since I started off with vee-validates examples, I decided to also stick with the CSS framework they used, which is [Bulma](https://bulma.io/). I have never used it before so I was learning it as I went along, but it is fairly similar to bootstrap. 
+Since I started off with vee-validate's examples, I decided to also stick with the CSS framework they used, which is [Bulma](https://bulma.io/). I have never used it before so I was learning it as I went along, but it is fairly similar to bootstrap. 
 
 I originally split the request form from the rest of the page as a separate component, but felt that was overcomplicating the task since the rest of the page is static. 
 
