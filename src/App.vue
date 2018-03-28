@@ -187,7 +187,9 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           this.status = 'Form Submitted!';
-          console.log('Form Submitted! Details: ', this);
+          console.log('Form Submitted!');
+          console.log('Details: ', 'Name:', this.fullname, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.project_type, 'Budget:', this.budget, 'Description:', this.description)
+          console.log('More details: ', this);
           this.incomplete = false;
           // this.submitForm(); if 
           return;
