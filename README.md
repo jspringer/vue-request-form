@@ -34,7 +34,7 @@ Since I started off with vee-validates examples, I decided to also stick with th
 
 I originally split the request form from the rest of the page as a separate component, but felt that was overcomplicating the task since the rest of the page is static. 
 
-There are some additional notes commented in the source code of App.vue related to how I could set up the code if actually sending the data somewhere such as a database. 
+There are some additional notes commented in the source code of [App.vue](src/App.vue) related to how I could set up the code if actually sending the data somewhere such as a database. 
 
 ## Potential issues
 
