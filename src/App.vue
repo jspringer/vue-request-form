@@ -7,7 +7,7 @@
       </a>
     </span>
 
-    <h1 id="title">PROJECT REQUEST FORM</h1>
+    <h1 id="title">PROJECT REQUEST</h1>
 
     <!-- Uncomment below if you want to see the keys updating on the page as values are entered -->
     <!-- p id="livecheck">FLN: {{ fullname }} FN: {{ firstname }} LN: {{ lastname }} E: {{ email }} P: {{ phone }} B: {{ budget }} T: {{ project_type }} D: {{ description }}</p -->
@@ -285,7 +285,7 @@ h1 {
 
 @media (max-width: 568px) { 
   h1 { 
-    font-size: 1.7em;
+    font-size: 2em;
     color: #000; 
   }
 }
