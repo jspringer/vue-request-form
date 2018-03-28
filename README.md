@@ -2,16 +2,23 @@
 
 ## Installation
 
+1. [Download](https://github.com/jspringer/vue-request-form/archive/master.zip) and unzip locally.
+
+2. Using terminal, type the following command in the directory of the unzipped files to install dependencies: 
 ``` bash
-# install dependencies
 npm install
-
-# serve with hot reload at localhost:8080
+```
+3. To run in dev mode, type: 
+``` bash
 npm run dev
+```
+View at http://localhost:8080/
 
-# build for production with minification
+4. To run in production mode, type: 
+``` bash
 npm run build
 ```
+View at http://localhost:5000
 
 ### [Live demo](https://jsnspr-vue-request-form.heroku.com/)
 
