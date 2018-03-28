@@ -12,13 +12,15 @@ npm install
 ``` bash
 npm run dev
 ```
-View at http://localhost:8080/
+View at http://localhost:8080/ (may be on a slightly different port)
 
 4. To run in production mode, type: 
 ``` bash
 npm run build
 ```
 View at http://localhost:5000
+
+5. Use Console via DevTools to see the results of the the form submission. User entered values are stored in firstname, lastname, fullname, email, phone, project_type, and description. 
 
 ### [Live demo](https://jsnspr-vue-request-form.heroku.com/)
 
