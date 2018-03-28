@@ -13,7 +13,7 @@ npm run dev
 npm run build
 ```
 
-### [Live demo](https://vue-request-form.heroku.com/)
+### [Live demo](https://jsnspr-vue-request-form.heroku.com/)
 
 ## Notes
 
