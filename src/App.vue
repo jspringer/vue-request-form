@@ -236,7 +236,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000;
   max-width: 700px;
   margin-top: 40px;
   margin-bottom: 60px;
