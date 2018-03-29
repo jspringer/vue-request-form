@@ -185,15 +185,16 @@ export default {
   },
   methods: {
     fullName() {
-      return (this.fullname + ' ' + this.lastname);
+      return (this.firstname + ' ' + this.lastname);
     }, 
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          // Need another few steps as the data is passed on and wait for a response from
-          // the server that it has been received before displaying it has been submitted. 
-          // fullName(); Alternative to combining firstname and lastname using watch above, 
-          // less resources used. 
+          // Need another few steps as the data is passed on and wait for a response from the 
+          // server that it has been received before displaying it has been submitted. 
+          // this.fullname = fullName(); Alternative to combining firstname and lastname using 
+          // watch above, likely less resources used. Another alternative, skipping a function: 
+          // this.fullname = this.firstname + ' ' + this.lastname
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
           console.log('Details: ', 'Name:', this.fullname, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.project_type, 'Budget:', this.budget, 'Description:', this.description)
