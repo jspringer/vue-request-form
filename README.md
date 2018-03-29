@@ -26,7 +26,7 @@ View at http://localhost:5000
 
 ## Notes
 
-I looked into and tried different packages for handling the forms and validation and sanitization, including [vue-form-generator](https://github.com/vue-generators/vue-form-generator), [vue-form](https://www.npmjs.com/package/vue-form), and [vuelidate](https://monterail.github.io/vuelidate/). I also considered handling it using HTML5 options directly on the elements via regular expressions. I ultimately decided to use **[vee-validate](https://vee-validate.logaretm.com/)**. I think using a package is better overall as it gives more control over how the validation works and appears, though I did use some of the built in HTML options to limit the amount of characters (maxlength, digits).
+After reviewing a few options for handling validation and sanitzation, I ultimately decided to use **[vee-validate](https://vee-validate.logaretm.com/)**. I think using a package is better overall as it gives more control over how the validation works and appears, though I did use some of the built in HTML options to limit the amount of characters (maxlength, digits).
 
 Since I started off with vee-validate's examples, I decided to also stick with the CSS framework they used, which is [Bulma](https://bulma.io/). I have never used it before, so I was learning it as I went along, but it is fairly similar to bootstrap. 
 
@@ -35,6 +35,8 @@ Icons used are from [Font Awesome](https://fontawesome.com/).
 I originally split the request form from the rest of the page as a separate component, but felt that was overcomplicating the task since the rest of the page is static. 
 
 There are some additional notes commented in the source code of [App.vue](src/App.vue) related to how I could set up the code if actually sending the data somewhere such as a database. 
+
+I will recreate the app from scratch using strictly what is actually used in the final version so there won't be so many devDependinces, which will also reduce the installation size. Will do that Wednesday night or some time Thursday. 
 
 ## Potential issues
 
