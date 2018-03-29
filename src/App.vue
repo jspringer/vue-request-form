@@ -10,7 +10,7 @@
     <h1 id="title">PROJECT REQUEST</h1>
 
     <!-- Uncomment below if you want to see the keys updating on the page as values are entered -->
-    <!-- p id="livecheck">FLN: {{ fullName }} FN: {{ firstname }} LN: {{ lastname }} E: {{ email }} P: {{ phone }} B: {{ budget }} T: {{ projectType }} D: {{ description }}</p -->
+    <!-- p id="livecheck">FLN: {{ fullName }} FN: {{ firstName }} LN: {{ lastName }} E: {{ email }} P: {{ phone }} B: {{ budget }} T: {{ projectType }} D: {{ description }}</p -->
     <div v-show="incomplete">
       <form @submit.prevent="validateBeforeSubmit">
         <div class="columns is-rtl is-multiline">
@@ -18,34 +18,34 @@
           <div class="column is-10 is-offset-1">
             <label class="label is-large">First Name</label>
             <p class="control has-icons-left has-icons-right">
-              <input name="firstname" v-model="firstname" v-validate="'required|alpha'"  maxlength="30" :class="{'input': true, 'is-large': true, 'is-danger': errors.has('firstname') }" type="text" placeholder="Jane">
+              <input name="firstName" v-model="firstName" v-validate="'required|alpha'"  maxlength="30" :class="{'input': true, 'is-large': true, 'is-danger': errors.has('firstName') }" type="text" placeholder="Jane">
               <span class="icon is-large is-left">
                 <i class="fas fa-user"></i>
               </span>
               <span class="icon is-large is-right">
-                <i v-show="firstname && !errors.has('firstname')" class="fas fa-check"></i>
+                <i v-show="firstName && !errors.has('firstName')" class="fas fa-check"></i>
               </span>
               <span class="icon is-large is-right">
-                <i v-show="errors.has('firstname')" class="fas fa-exclamation-triangle"></i>
+                <i v-show="errors.has('firstName')" class="fas fa-exclamation-triangle"></i>
               </span>
-              <span v-show="errors.has('firstname')" class="help is-danger">{{ errors.first('firstname') }}</span>
+              <span v-show="errors.has('firstName')" class="help is-danger">{{ errors.first('firstName') }}</span>
             </p>
           </div>
 
           <div class="column is-10 is-offset-1">
             <label class="label is-large">Last Name</label>
             <p class="control has-icons-left has-icons-right">
-              <input name="lastname" v-model="lastname" v-validate="'required|alpha'" maxlength="30" :class="{'input': true, 'is-large': true, 'is-danger': errors.has('lastname') }" type="text" placeholder="Doe">
+              <input name="lastName" v-model="lastName" v-validate="'required|alpha'" maxlength="30" :class="{'input': true, 'is-large': true, 'is-danger': errors.has('lastName') }" type="text" placeholder="Doe">
               <span class="icon is-large is-left">
                 <i class="fas fa-user-plus"></i>
               </span>
               <span class="icon is-large is-right">
-                <i v-show="lastname && !errors.has('lastname')" class="fas fa-check"></i>
+                <i v-show="lastName && !errors.has('lastName')" class="fas fa-check"></i>
               </span>
               <span class="icon is-large is-right">
-                <i v-show="errors.has('lastname')" class="fas fa-exclamation-triangle"></i>
+                <i v-show="errors.has('lastName')" class="fas fa-exclamation-triangle"></i>
               </span>
-              <span v-show="errors.has('lastname')" class="help is-danger">{{ errors.first('lastname') }}</span>
+              <span v-show="errors.has('lastName')" class="help is-danger">{{ errors.first('lastName') }}</span>
             </p>
           </div>
 
@@ -174,30 +174,30 @@ export default {
     status: '',
     incomplete: true
   }),
-  // Updates fullName as firstname and lastname are updated. 
+  // Updates fullName as firstName and lastName are updated. 
   // See createFullName() method below for an alternative. 
   
   watch: {
-    firstname: function (val) {
-      this.fullName = val + ' ' + this.lastname;
+    firstName: function (val) {
+      this.fullName = val + ' ' + this.lastName;
     },
-    lastname: function (val) {
-      this.fullName = this.firstname + ' ' + val;
+    lastName: function (val) {
+      this.fullName = this.firstName + ' ' + val;
     }
   },
 
   methods: {
-    createFullName() {
-      return (this.firstname + ' ' + this.lastname);
+    createFullName: function() {
+      return (this.firstName + ' ' + this.lastName);
     }, 
-    validateBeforeSubmit() {
+    validateBeforeSubmit: function() {
       this.$validator.validateAll().then((result) => {
         if (result) {
           /* Need another few steps as the data is passed on and wait for a response from the 
           server that it has been received before displaying it has been submitted. */
-          /* this.fullName = createFullName(); Alternative to combining firstname and lastname using 
+          /* this.fullName = createFullName(); Alternative to combining firstName and lastName using 
           watch above, likely less resources used. Another alternative, skipping a method: 
-          this.fullName = this.firstname + ' ' + this.lastname; */
+          this.fullName = this.firstName + ' ' + this.lastName; */
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
           console.log('Details: ', 'Name:', this.fullName, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.projectType, 'Budget:', this.budget, 'Description:', this.description)
