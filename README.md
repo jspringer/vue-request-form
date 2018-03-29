@@ -20,7 +20,7 @@ npm run build
 ```
 View at http://localhost:5000
 
-5. Use Console via DevTools to see the results of the the form submission. User entered values are stored in firstname, lastname, fullname, email, phone, project_type, and description. 
+5. Use Console via DevTools to see the results of the the form submission. User entered values are stored in firstName, lastName, fullName, email, phone, projectType, and description. 
 
 ### [Live demo](https://jsnspr-vue-request-form.heroku.com/)
 
