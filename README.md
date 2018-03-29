@@ -32,8 +32,6 @@ Since I started off with vee-validate's examples, I decided to also stick with t
 
 Icons used are from [Font Awesome](https://fontawesome.com/). 
 
-I originally split the request form from the rest of the page as a separate component, but felt that was overcomplicating the task since the rest of the page is static. 
-
 There are some additional notes commented in the source code of [App.vue](src/App.vue) related to how I could set up the code if actually sending the data somewhere such as a database. 
 
 I will recreate the app from scratch using strictly what is actually used in the final version so there won't be so many devDependinces, which will also reduce the installation size. Will do that Wednesday night or some time Thursday. 
