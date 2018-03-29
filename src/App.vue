@@ -10,7 +10,7 @@
     <h1 id="title">PROJECT REQUEST</h1>
 
     <!-- Uncomment below if you want to see the keys updating on the page as values are entered -->
-    <!-- p id="livecheck">FLN: {{ fullname }} FN: {{ firstname }} LN: {{ lastname }} E: {{ email }} P: {{ phone }} B: {{ budget }} T: {{ project_type }} D: {{ description }}</p -->
+    <!-- p id="livecheck">FLN: {{ fullName }} FN: {{ firstname }} LN: {{ lastname }} E: {{ email }} P: {{ phone }} B: {{ budget }} T: {{ projectType }} D: {{ description }}</p -->
     <div v-show="incomplete">
       <form @submit.prevent="validateBeforeSubmit">
         <div class="columns is-rtl is-multiline">
@@ -87,7 +87,7 @@
             <label class="label is-large">Project Type</label>
             <p class="control is-expanded">
               <span class="select is-large is-fullwidth">
-                <select v-model="project_type" v-validate="'in:ios,web,branding,other'">
+                <select v-model="projectType" v-validate="'in:ios,web,branding,other'">
                   <option disabled value="">Please select one</option>
                   <option value="ios">iOS</option>
                   <option value="web">Web</option>
@@ -163,31 +163,31 @@ export default {
   name: 'App',
   
   data: () => ({
-    firstname: '',
-    lastname: '',
-    fullname: '',
+    firstName: '',
+    lastName: '',
+    fullName: '',
     email: '',
     phone: '',
     budget: '',
-    project_type: '',
+    projectType: '',
     description: '',
     status: '',
     incomplete: true
   }),
-  // Updates fullname as firstname and lastname are updated. 
-  // See fullName() method below for an alternative. 
+  // Updates fullName as firstname and lastname are updated. 
+  // See createFullName() method below for an alternative. 
   
   watch: {
     firstname: function (val) {
-      this.fullname = val + ' ' + this.lastname;
+      this.fullName = val + ' ' + this.lastname;
     },
     lastname: function (val) {
-      this.fullname = this.firstname + ' ' + val;
+      this.fullName = this.firstname + ' ' + val;
     }
   },
 
   methods: {
-    fullName() {
+    createFullName() {
       return (this.firstname + ' ' + this.lastname);
     }, 
     validateBeforeSubmit() {
@@ -195,12 +195,12 @@ export default {
         if (result) {
           /* Need another few steps as the data is passed on and wait for a response from the 
           server that it has been received before displaying it has been submitted. */
-          /* this.fullname = fullName(); Alternative to combining firstname and lastname using 
+          /* this.fullName = createFullName(); Alternative to combining firstname and lastname using 
           watch above, likely less resources used. Another alternative, skipping a method: 
-          this.fullname = this.firstname + ' ' + this.lastname; */
+          this.fullName = this.firstname + ' ' + this.lastname; */
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
-          console.log('Details: ', 'Name:', this.fullname, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.project_type, 'Budget:', this.budget, 'Description:', this.description)
+          console.log('Details: ', 'Name:', this.fullName, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.projectType, 'Budget:', this.budget, 'Description:', this.description)
           console.log('More details: ', this);
           this.incomplete = false;
           return;
@@ -219,11 +219,11 @@ export default {
       }
 
       axios.post('post.php', {
-        'name': this.fullname,
+        'name': this.fullName,
         'email': this.email,     
         'phone': this.phone,
         'budget': this.budget,
-        'project_type': this.project_type,
+        'projectType': this.projectType,
         'description': this.description 
       }).then(response => {
         if (response.data.error) {
