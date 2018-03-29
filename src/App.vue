@@ -194,7 +194,7 @@ export default {
           server that it has been received before displaying it has been submitted. */
           /* this.fullname = fullName(); Alternative to combining firstname and lastname using 
           watch above, likely less resources used. Another alternative, skipping a function: 
-          this.fullname = this.firstname + ' ' + this.lastname */
+          this.fullname = this.firstname + ' ' + this.lastname; */
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
           console.log('Details: ', 'Name:', this.fullname, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.project_type, 'Budget:', this.budget, 'Description:', this.description)
