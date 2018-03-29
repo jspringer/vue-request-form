@@ -161,6 +161,7 @@ Vue.use(VeeValidate);
 
 export default {
   name: 'App',
+  
   data: () => ({
     firstname: '',
     lastname: '',
@@ -175,6 +176,7 @@ export default {
   }),
   // Updates fullname as firstname and lastname are updated. 
   // See fullName() method below for an alternative. 
+  
   watch: {
     firstname: function (val) {
       this.fullname = val + ' ' + this.lastname;
@@ -183,6 +185,7 @@ export default {
       this.fullname = this.firstname + ' ' + val;
     }
   },
+
   methods: {
     fullName() {
       return (this.firstname + ' ' + this.lastname);
@@ -233,7 +236,6 @@ export default {
           console.log(error.response)
       }); 
 */
-
 </script>
 
 
