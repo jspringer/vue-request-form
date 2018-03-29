@@ -174,6 +174,7 @@ export default {
     incomplete: true
   }),
   // Updates fullname as firstname and lastname are updated. 
+  // See fullName() method below for an alternative. 
   watch: {
     firstname: function (val) {
       this.fullname = val + ' ' + this.lastname;
