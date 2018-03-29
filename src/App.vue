@@ -196,7 +196,7 @@ export default {
           /* Need another few steps as the data is passed on and wait for a response from the 
           server that it has been received before displaying it has been submitted. */
           /* this.fullname = fullName(); Alternative to combining firstname and lastname using 
-          watch above, likely less resources used. Another alternative, skipping a function: 
+          watch above, likely less resources used. Another alternative, skipping a method: 
           this.fullname = this.firstname + ' ' + this.lastname; */
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
