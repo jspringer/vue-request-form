@@ -36,7 +36,5 @@ There are some additional notes commented in the source code of [App.vue](src/Ap
 
 I will recreate the app from scratch using strictly what is actually used in the final version so there won't be so many devDependinces, which will also reduce the installation size. Will do that Wednesday night or some time Thursday. 
 
-I may be able to improve the phone field with automated parentheses around the area code and a dash between the first 3 and last 4 digits. When I find a way to do that, I will update. 
-
 In App.vue, line 109, there seems to be an issue with the max option on the input element set to type number, at least when I tested it. I set maxlength to 7 as well for browsers that do not recognize type number and default to type text. You can see under Budget, you are able to enter values higher than 1,000,000, but you will get the warning message via Vue + vee-validate. 
 
