@@ -156,7 +156,7 @@
 <script>
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
-// import axios from 'axios' 
+// import axios from 'axios'; 
 
 Vue.use(VeeValidate);
 
