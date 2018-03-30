@@ -9,7 +9,7 @@
 
     <h1 id="title">PROJECT REQUEST</h1>
 
-    <!-- Uncomment below if you want to see the keys updating on the page as values are entered -->
+    <!-- Uncomment below to see the keys updating on the page as values are entered -->
     <!-- p id="livecheck">FLN: {{ fullName }} FN: {{ firstName }} LN: {{ lastName }} E: {{ email }} P: {{ phone }} B: {{ budget }} T: {{ projectType }} D: {{ description }}</p -->
     <div v-show="incomplete">
       <form @submit.prevent="validateBeforeSubmit">
