@@ -156,6 +156,7 @@
 <script>
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
+// import axios from 'axios' 
 
 Vue.use(VeeValidate);
 
@@ -171,12 +172,13 @@ export default {
     budget: '',
     projectType: '',
     description: '',
+    formDataObject: '',
     status: '',
     incomplete: true
   }),
+
   // Updates fullName as firstName and lastName are updated. 
   // See createFullName() method below for an alternative. 
-  
   watch: {
     firstName: function (val) {
       this.fullName = val + ' ' + this.lastName;
@@ -190,19 +192,38 @@ export default {
     createFullName: function() {
       return (this.firstName + ' ' + this.lastName);
     }, 
+    createFormDataObject: function() {
+      return ({ name: this.fullName, email: this.email, phone: this.phone, projectType: this.projectType, budget: this.budget, description: this.description });
+    },
     validateBeforeSubmit: function() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          /* Need another few steps as the data is passed on and wait for a response from the 
-          server that it has been received before displaying it has been submitted. */
           /* this.fullName = createFullName(); Alternative to combining firstName and lastName using 
           watch above, likely less resources used. Another alternative, skipping a method: 
           this.fullName = this.firstName + ' ' + this.lastName; */
+          this.formDataObject = this.createFormDataObject();
+          /* This is one way I could handle the POST if actually sending it somewhere (https://www.npmjs.com/package/axios)
+          axios.post('/post', this.formDataObject, { headers: {
+            'Content-type': 'application/x-www-form-urlencoded',
+          }}).then(res => { 
+            if (res.data.error) {
+              console.log('Error:', res.data.error);
+            } else {
+              this.status = 'Form Submitted!';
+              console.log('Form Submitted!');
+              console.log('Data: ', 'Name:', this.fullName, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.projectType, 'Budget:', this.budget, 'Description:', this.description);
+              console.log('Data in single object: ', this.formDataObject);
+              console.log('Response: ', JSON.stringify(res, null, 2));
+              this.incomplete = false;
+          }
+          }).catch(error => {
+            console.log(error.response)
+          }); */
           this.status = 'Form Submitted!';
           console.log('Form Submitted!');
-          console.log('Details: ', 'Name:', this.fullName, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.projectType, 'Budget:', this.budget, 'Description:', this.description)
-          console.log('More details: ', this);
-          this.incomplete = false;
+          console.log('Data: ', 'Name:', this.fullName, 'Email:', this.email, 'Phone:', this.phone, 'Project Type:', this.projectType, 'Budget:', this.budget, 'Description:', this.description);
+          console.log('Data in single object: ', this.formDataObject);
+          this.incomplete = false; 
           return;
         }
         alert('Please complete the form and try again!'); 
@@ -211,31 +232,6 @@ export default {
     }
   }
 }
-  
-/*
-      This is one way I could handle the POST if actually sending it somewhere (https://www.npmjs.com/package/axios)
-      if (process.env.NODE_ENV === 'development') {
-        axios.defaults.baseURL = 'http://localhost:8888/php'
-      }
-
-      axios.post('post.php', {
-        'name': this.fullName,
-        'email': this.email,     
-        'phone': this.phone,
-        'budget': this.budget,
-        'projectType': this.projectType,
-        'description': this.description 
-      }).then(response => {
-        if (response.data.error) {
-            console.log('error', response.data.error)
-        } else {
-            this.postStatus = true
-            console.log('success', response.data.message)                   
-        }
-      }).catch(error => {
-          console.log(error.response)
-      }); 
-*/
 </script>
 
 
