@@ -107,7 +107,7 @@
                 </a>
               </p>
               <p class="control has-icons-right is-expanded">
-                <input name="budget" v-model="budget" v-validate="'required|max_value:1000000'" data-vv-as="Budget" min="0" max="1000000" maxlength="7" :class="{'input': true, 'is-large': true, 'is-danger': errors.has('budget') }" type="number" placeholder="0">
+                <input name="budget" v-model="budget" v-validate="'required|between:0,1000000'" data-vv-as="Budget" min="0" max="1000000" maxlength="7" :class="{'input': true, 'is-large': true, 'is-danger': errors.has('budget') }" type="number" placeholder="0">
                 <span class="icon is-large is-right">
                   <i v-show="budget && !errors.has('budget')" class="fas fa-check"></i>
                 </span>
