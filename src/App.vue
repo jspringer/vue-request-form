@@ -30,8 +30,8 @@
                 type="text" 
                 placeholder="Jane">
                 <!-- ^ required could be added to input for all required inputs but it overrides VeeValidate's 
-                     required text, displaying the browser's default required text, making the user experience 
-                     a bit inconsistent. -->
+                       required text, displaying the browser's default required text, making the user experience 
+                       a bit inconsistent. -->
               <span class="icon is-large is-left">
                 <i class="fas fa-user"></i>
               </span>
@@ -157,7 +157,7 @@
                   type="number" 
                   placeholder="0">
                 <!-- ^ Possible to make the input options numbers only on mobile devices if type="text" and pattern="\d*", 
-                     but it loses the up and down arrows on web browsers -->
+                       but it loses the up and down arrows on web browsers -->
                 <span class="icon is-large is-right">
                   <i v-show="budget && !errors.has('budget')" class="fas fa-check"></i>
                 </span>
