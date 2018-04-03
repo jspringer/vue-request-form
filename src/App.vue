@@ -23,12 +23,13 @@
               <input 
                 name="firstName" 
                 v-model="firstName" 
-                v-validate="'required|alpha'" 
                 data-vv-as="First Name" 
+                v-validate="'required|alpha'" 
                 maxlength="30" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('firstName') }" 
                 type="text" 
-                placeholder="Jane">
+                placeholder="Jane" 
+                required>
               <span class="icon is-large is-left">
                 <i class="fas fa-user"></i>
               </span>
@@ -48,12 +49,13 @@
               <input 
                 name="lastName" 
                 v-model="lastName" 
-                v-validate="'required|alpha'" 
                 data-vv-as="Last Name" 
+                v-validate="'required|alpha'" 
                 maxlength="30" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('lastName') }" 
                 type="text" 
-                placeholder="Doe">
+                placeholder="Doe" 
+                required>
               <span class="icon is-large is-left">
                 <i class="fas fa-user-plus"></i>
               </span>
@@ -73,12 +75,13 @@
               <input 
                 name="email" 
                 v-model="email" 
-                v-validate="'required|email'" 
                 data-vv-as="Email" 
+                v-validate="'required|email'" 
                 maxlength="50" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('email') }" 
                 type="text" 
-                placeholder="jane.doe@gmail.com">
+                placeholder="jane.doe@gmail.com" 
+                required>
               <span class="icon is-large is-left">
                 <i class="fas fa-envelope"></i>
               </span>
@@ -98,8 +101,8 @@
               <input 
                 name="phone" 
                 v-model="phone" 
-                v-validate="'numeric|digits:10'" 
                 data-vv-as="Phone" 
+                v-validate="'numeric|digits:10'" 
                 maxlength="10" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('phone'), 'success': phone.length === 10 && !errors.has('phone')}" 
                 type="tel" 
@@ -144,15 +147,16 @@
               <p class="control has-icons-right is-expanded">
                 <input 
                   name="budget" 
-                  v-model="budget"
-                  v-validate="'required|between:0,1000000'" 
+                  v-model="budget" 
                   data-vv-as="Budget" 
+                  v-validate="'required|between:0,1000000'" 
                   min="0" 
                   max="1000000" 
                   maxlength="7" 
                   :class="{'input': true, 'is-large': true, 'is-danger': errors.has('budget') }" 
                   type="number" 
-                  placeholder="0">
+                  placeholder="0" 
+                  required>
                 <!-- ^ Possible to make the input options numbers only on mobile devices if type="text" and pattern="\d*", but it loses the up and down arrows on web browsers -->
                 <span class="icon is-large is-right">
                   <i v-show="budget && !errors.has('budget')" class="fas fa-check"></i>
@@ -171,12 +175,13 @@
               <textarea 
                 name="description" 
                 v-model="description" 
-                v-validate="'required'" 
                 data-vv-as="Project Description" 
+                v-validate="'required'" 
                 maxlength="10000" 
                 rows="10" 
                 :class="{'textarea': true, 'is-large': true, 'is-danger': errors.has('description') }" 
-                placeholder="This is my project description."></textarea>
+                placeholder="This is my project description." 
+                required></textarea>
               <span class="icon is-large is-right">
                 <i v-show="description && !errors.has('description')" class="fas fa-check"></i>
               </span>
