@@ -104,6 +104,7 @@
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('phone'), 'success': phone.length === 10 && !errors.has('phone')}" 
                 type="tel" 
                 placeholder="5551234567">
+              <!-- ^ Possible to make the input options numbers only (without +, *, and # options) on mobile devices if type="text" and pattern="\d*" -->
               <span class="icon is-large is-left">
                 <i class="fas fa-phone"></i>
               </span>
