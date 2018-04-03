@@ -28,8 +28,10 @@
                 maxlength="30" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('firstName') }" 
                 type="text" 
-                placeholder="Jane" 
-                required>
+                placeholder="Jane">
+                <!-- ^ required could be added to input for all required inputs but it overrides VeeValidate's 
+                     required text, displaying the browser's default required text, making the user experience 
+                     a bit inconsistent. -->
               <span class="icon is-large is-left">
                 <i class="fas fa-user"></i>
               </span>
@@ -54,8 +56,7 @@
                 maxlength="30" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('lastName') }" 
                 type="text" 
-                placeholder="Doe" 
-                required>
+                placeholder="Doe">
               <span class="icon is-large is-left">
                 <i class="fas fa-user-plus"></i>
               </span>
@@ -80,8 +81,7 @@
                 maxlength="50" 
                 :class="{'input': true, 'is-large': true, 'is-danger': errors.has('email') }" 
                 type="text" 
-                placeholder="jane.doe@gmail.com" 
-                required>
+                placeholder="jane.doe@gmail.com">
               <span class="icon is-large is-left">
                 <i class="fas fa-envelope"></i>
               </span>
@@ -155,8 +155,7 @@
                   maxlength="7" 
                   :class="{'input': true, 'is-large': true, 'is-danger': errors.has('budget') }" 
                   type="number" 
-                  placeholder="0" 
-                  required>
+                  placeholder="0">
                 <!-- ^ Possible to make the input options numbers only on mobile devices if type="text" and pattern="\d*", but it loses the up and down arrows on web browsers -->
                 <span class="icon is-large is-right">
                   <i v-show="budget && !errors.has('budget')" class="fas fa-check"></i>
@@ -180,8 +179,7 @@
                 maxlength="10000" 
                 rows="10" 
                 :class="{'textarea': true, 'is-large': true, 'is-danger': errors.has('description') }" 
-                placeholder="This is my project description." 
-                required></textarea>
+                placeholder="This is my project description."></textarea>
               <span class="icon is-large is-right">
                 <i v-show="description && !errors.has('description')" class="fas fa-check"></i>
               </span>
@@ -236,8 +234,7 @@ export default {
     incomplete: true
   }),
 
-  // Updates fullName as firstName and lastName are updated. 
-  // See createFullName() method below for an alternative. 
+  // Updates fullName as firstName and lastName are updated. See createFullName() method below for an alternative. 
   watch: {
     firstName: function (val) {
       this.fullName = val + ' ' + this.lastName;
@@ -286,7 +283,8 @@ export default {
           return;
         }
         alert('Please complete the form and try again!'); 
-        // not a fan of alert popups but it serves the purpose for this demo.
+        /* Not a fan of alert popups but it serves the purpose for this demo. If required is used with the input 
+           elements above, then the browser's default required popups would prevent this alert from showing. */
       });
     }
   }
