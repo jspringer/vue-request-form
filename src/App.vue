@@ -156,7 +156,8 @@
                   :class="{'input': true, 'is-large': true, 'is-danger': errors.has('budget') }" 
                   type="number" 
                   placeholder="0">
-                <!-- ^ Possible to make the input options numbers only on mobile devices if type="text" and pattern="\d*", but it loses the up and down arrows on web browsers -->
+                <!-- ^ Possible to make the input options numbers only on mobile devices if type="text" and pattern="\d*", 
+                     but it loses the up and down arrows on web browsers -->
                 <span class="icon is-large is-right">
                   <i v-show="budget && !errors.has('budget')" class="fas fa-check"></i>
                 </span>
