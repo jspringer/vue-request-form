@@ -18,7 +18,7 @@
         <div class="columns is-rtl is-multiline">
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">First Name</label>
+            <label class="label is-medium">First Name</label>
             <p class="control has-icons-left has-icons-right">
               <input 
                 name="firstName" 
@@ -26,19 +26,19 @@
                 data-vv-as="First Name" 
                 v-validate="'required|alpha'" 
                 maxlength="30" 
-                :class="{'input': true, 'is-large': true, 'is-danger': errors.has('firstName') }" 
+                :class="{'input': true, 'is-medium': true, 'is-danger': errors.has('firstName') }" 
                 type="text" 
                 placeholder="Jane">
                 <!-- ^ required could be added to input for all required inputs but it overrides VeeValidate's 
                        required text, displaying the browser's default required text, making the user experience 
                        a bit inconsistent. -->
-              <span class="icon is-large is-left">
+              <span class="icon is-medium is-left">
                 <i class="fas fa-user"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="firstName && !errors.has('firstName')" class="fas fa-check"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="errors.has('firstName')" class="fas fa-exclamation-triangle"></i>
               </span>
               <span v-show="errors.has('firstName')" class="help is-danger">{{ errors.first('firstName') }}</span>
@@ -46,7 +46,7 @@
           </div>
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">Last Name</label>
+            <label class="label is-medium">Last Name</label>
             <p class="control has-icons-left has-icons-right">
               <input 
                 name="lastName" 
@@ -54,16 +54,16 @@
                 data-vv-as="Last Name" 
                 v-validate="'required|alpha'" 
                 maxlength="30" 
-                :class="{'input': true, 'is-large': true, 'is-danger': errors.has('lastName') }" 
+                :class="{'input': true, 'is-medium': true, 'is-danger': errors.has('lastName') }" 
                 type="text" 
                 placeholder="Doe">
-              <span class="icon is-large is-left">
+              <span class="icon is-medium is-left">
                 <i class="fas fa-user-plus"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="lastName && !errors.has('lastName')" class="fas fa-check"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="errors.has('lastName')" class="fas fa-exclamation-triangle"></i>
               </span>
               <span v-show="errors.has('lastName')" class="help is-danger">{{ errors.first('lastName') }}</span>
@@ -71,7 +71,7 @@
           </div>
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">Email</label>
+            <label class="label is-medium">Email</label>
             <p class="control has-icons-left has-icons-right">
               <input 
                 name="email" 
@@ -79,16 +79,16 @@
                 data-vv-as="Email" 
                 v-validate="'required|email'" 
                 maxlength="50" 
-                :class="{'input': true, 'is-large': true, 'is-danger': errors.has('email') }" 
+                :class="{'input': true, 'is-medium': true, 'is-danger': errors.has('email') }" 
                 type="text" 
                 placeholder="jane.doe@gmail.com">
-              <span class="icon is-large is-left">
+              <span class="icon is-medium is-left">
                 <i class="fas fa-envelope"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="email && !errors.has('email')" class="fas fa-check"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="errors.has('email')" class="fas fa-exclamation-triangle"></i>
               </span>
               <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
@@ -96,7 +96,7 @@
           </div>
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">Phone</label>
+            <label class="label is-medium">Phone</label>
             <p class="control has-icons-left has-icons-right">
               <input 
                 name="phone" 
@@ -104,17 +104,17 @@
                 data-vv-as="Phone" 
                 v-validate="'numeric|digits:10'" 
                 maxlength="10" 
-                :class="{'input': true, 'is-large': true, 'is-danger': errors.has('phone'), 'success': phone.length === 10 && !errors.has('phone')}" 
+                :class="{'input': true, 'is-medium': true, 'is-danger': errors.has('phone'), 'success': phone.length === 10 && !errors.has('phone')}" 
                 type="tel" 
                 placeholder="5551234567">
               <!-- ^ Possible to make the input options numbers only (without +, *, and # options) on mobile devices if type="text" and pattern="\d*" -->
-              <span class="icon is-large is-left">
+              <span class="icon is-medium is-left">
                 <i class="fas fa-phone"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="phone.length === 10 && !errors.has('phone')" class="fas fa-check"></i>
               </span>            
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="errors.has('phone')" class="fas fa-exclamation-triangle"></i>
               </span>
               <span v-show="errors.has('phone')" class="help is-danger">{{ errors.first('phone') }}</span>
@@ -122,9 +122,9 @@
           </div>
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">Project Type</label>
+            <label class="label is-medium">Project Type</label>
             <p class="control is-expanded">
-              <span class="select is-large is-fullwidth">
+              <span class="select is-medium is-fullwidth">
                 <select v-model="projectType" v-validate="'in:ios,web,branding,other'">
                   <option disabled value="">Please select one</option>
                   <option value="ios">iOS</option>
@@ -137,10 +137,10 @@
           </div>
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">Budget</label>
+            <label class="label is-medium">Budget</label>
             <div class="field has-addons">
               <p class="control">
-                <a class="button is-static is-large">
+                <a class="button is-static is-medium">
                   $
                 </a>
               </p>
@@ -153,15 +153,15 @@
                   min="0" 
                   max="1000000" 
                   maxlength="7" 
-                  :class="{'input': true, 'is-large': true, 'is-danger': errors.has('budget') }" 
+                  :class="{'input': true, 'is-medium': true, 'is-danger': errors.has('budget') }" 
                   type="number" 
                   placeholder="0">
                 <!-- ^ Possible to make the input options numbers only on mobile devices if type="text" and pattern="\d*", 
                        but it loses the up and down arrows on web browsers -->
-                <span class="icon is-large is-right">
+                <span class="icon is-medium is-right">
                   <i v-show="budget && !errors.has('budget')" class="fas fa-check"></i>
                 </span>
-                <span class="icon is-large is-right">
+                <span class="icon is-medium is-right">
                   <i v-show="errors.has('budget')" class="fas fa-exclamation-triangle"></i>
                 </span>
                 <span v-show="errors.has('budget')" class="help is-danger">{{ errors.first('budget') }}</span>
@@ -170,7 +170,7 @@
           </div>
 
           <div class="column is-10 is-offset-1">
-            <label class="label is-large">Project Description</label>
+            <label class="label is-medium">Project Description</label>
             <p class="control has-icons-left has-icons-right">
               <textarea 
                 name="description" 
@@ -179,12 +179,12 @@
                 v-validate="'required'" 
                 maxlength="10000" 
                 rows="10" 
-                :class="{'textarea': true, 'is-large': true, 'is-danger': errors.has('description') }" 
+                :class="{'textarea': true, 'is-medium': true, 'is-danger': errors.has('description') }" 
                 placeholder="This is my project description."></textarea>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="description && !errors.has('description')" class="fas fa-check"></i>
               </span>
-              <span class="icon is-large is-right">
+              <span class="icon is-medium is-right">
                 <i v-show="errors.has('description')" class="fas fa-exclamation-triangle"></i>
               </span>
               <span v-show="errors.has('description')" class="help is-danger">{{ errors.first('description') }}</span>
@@ -193,7 +193,7 @@
 
           <div class="column is-10 is-offset-1">
             <p class="control center">
-              <button class="button is-large is-primary is-rounded is-centered" type="submit">Submit</button>
+              <button class="button is-medium is-primary is-rounded is-centered" type="submit">Submit</button>
             </p>
           </div>
         </div>

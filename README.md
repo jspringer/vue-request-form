@@ -36,5 +36,5 @@ There are some additional notes commented in the source code of [App.vue](src/Ap
 
 Need to clean up the devDependinces or recreate from scratch since I installed and tried a few different things while developing that are no longer used, which will decrease the installation size. 
 
-In App.vue, line 109, there seems to be an issue with the max option on the input element set to type number, at least when I tested it. I set maxlength to 7 as well for browsers that do not recognize type number and default to type text. You can see under Budget, you are able to enter values higher than 1,000,000, but you will get the warning message via Vue + vee-validate. 
+In App.vue, line 154, there seems to be an issue with the max option on the input element set to type number, at least when I tested it. I set maxlength to 7 as well for browsers that do not recognize type number and default to type text. You can see under Budget, you are able to enter values higher than 1,000,000, but you will get the warning message via Vue + vee-validate. 
 
